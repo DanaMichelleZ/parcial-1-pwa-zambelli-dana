@@ -8,6 +8,7 @@ const mostrarPokemon = (pokemon) => {
     const li = document.createElement('li');
 
     const titulo = document.createElement('h3');
+    titulo.innerText = pokemon.name;
     li.appendChild(titulo);
 
     const descripcion = document.createElement('p');
@@ -20,8 +21,11 @@ const mostrarPokemon = (pokemon) => {
 fetch(URL_POKEMONES)
 .then(data => data.json())
 .then(result => {
-    const results = result.results; //este es el array de objetos q devuelve en la consola del nav//
-    const primerResultado = results [10]; // results es el objeto en cuestion//
+    const results = result.results; 
+
+    const primerResultado = results [0];
+    const segundoResultado = results [1];
 
     mostrarPokemon(primerResultado)
+    mostrarPokemon(segundoResultado)
 })
