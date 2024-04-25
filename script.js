@@ -24,8 +24,5 @@ fetch(URL_POKEMONES)
     const results = result.results; 
 
     const primerResultado = results [0];
-    const segundoResultado = results [1];
-
     mostrarPokemon(primerResultado)
-    mostrarPokemon(segundoResultado)
 })
