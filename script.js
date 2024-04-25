@@ -2,12 +2,11 @@ const URL_ENDOPOINT = 'https://pokeapi.co/api/v2/';
 const URL_POKEMONES = URL_ENDOPOINT + 'pokemon';
 
 const mostrarPokemon = (pokemon) => {
-    console.log(pokemon)
     const pokedex = document.getElementById("pokedex")
 
     const li = document.createElement('li');
     li.addEventListener('click', () => {
-        alert("mostrar detalles")
+        mostrarDetalle(pokemon.id)
     })
 
     const titulo = document.createElement('h3');
@@ -18,20 +17,19 @@ const mostrarPokemon = (pokemon) => {
     li.appendChild(descripcion);
 
     pokedex.appendChild(li);
-    console.log(pokedex);
+    
 }
 
-//Ahora pasamos a agregar la funcion pa mostrar los detalles
-const mostrarDetalle = (pokemon) => {
-    window.location.href = "http://127.0.0.1:5500/detalle.html"
+const mostrarDetalle = (id) => {
+    window.location.href = "http://127.0.0.1:5500/detalle.html?id=" + id
 }
-//
+
 
 fetch(URL_POKEMONES)
 .then(data => data.json())
 .then(result => {
     const results = result.results; 
 
-    const primerResultado = results [0];
-    mostrarPokemon(primerResultado)
+    const primerResultado = results [5];
+    mostrarPokemon(primerResultado);
 })
