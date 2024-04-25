@@ -6,6 +6,9 @@ const mostrarPokemon = (pokemon) => {
     const pokedex = document.getElementById("pokedex")
 
     const li = document.createElement('li');
+    li.addEventListener('click', () => {
+        alert("mostrar detalles")
+    })
 
     const titulo = document.createElement('h3');
     titulo.innerText = pokemon.name;
@@ -17,6 +20,12 @@ const mostrarPokemon = (pokemon) => {
     pokedex.appendChild(li);
     console.log(pokedex);
 }
+
+//Ahora pasamos a agregar la funcion pa mostrar los detalles
+const mostrarDetalle = (pokemon) => {
+    window.location.href = "http://127.0.0.1:5500/detalle.html"
+}
+//
 
 fetch(URL_POKEMONES)
 .then(data => data.json())
