@@ -1,17 +1,25 @@
 body{
+ 
+}
+body h1{
     font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+
+    color: aliceblue;
+    text-align: center;
 }
 
 .encabezado{
-    margin: 0;
-    margin-left: 150px;
-    margin-right: 150px;
+    background-color: black;
 }
 
 #pokedex{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+
+    margin-left: 150px;
+    margin-right: 150px;
 
     background-color: #FBFBFB;
     color: #333333;
