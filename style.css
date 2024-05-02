@@ -92,3 +92,20 @@ button:hover {
     text-align: center;
     margin-bottom: 10px;
 }
+
+.ready {
+    text-align: center;
+
+      margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 30px;
+
+    padding: 2%;
+
+    background-color: #e1e0e8;
+}
+.ready img {
+        display: inline-block;
+        margin: 0 auto;
+        max-width: 40vh;
+}
