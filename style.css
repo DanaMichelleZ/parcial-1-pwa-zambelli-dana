@@ -2,6 +2,12 @@ body{
     font-family: 'Montserrat', sans-serif;
 }
 
+.encabezado{
+    margin: 0;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
 #pokedex{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -13,4 +19,7 @@ body{
 
 #pokedex li{
     list-style: none;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
 }
