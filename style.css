@@ -5,7 +5,7 @@ body{
 
     background-color: #2d276d;
 }
-body h1{
+body h1, h2{
     font-weight: 800;
 
     color: aliceblue;
@@ -48,10 +48,22 @@ body h1{
 }
 
 
-#detalle-pokemon{
-    margin-left: 150px;
-    margin-right: 150px;
-
-    display: grid;
+.poke-detalle {
+    display: flex; 
+    justify-content: center; 
     align-items: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+#detalle-pokemon {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 2%;
+    background-color: #e1e0e8;
+}
+
+.poke-detalle img{
+    max-width: 60vh;
 }
