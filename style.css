@@ -4,6 +4,13 @@ body{
 
 #pokedex{
     display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
     background-color: #FBFBFB;
     color: #333333;
+}
+
+#pokedex li{
+    list-style: none;
 }
