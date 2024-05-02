@@ -1,35 +1,34 @@
-const URL_ENDOPOINT = 'https://pokeapi.co/api/v2/';
-const URL_POKEMONES = URL_ENDOPOINT + 'pokemon';
+const URL_ENDPOINT = 'https://pokeapi.co/api/v2/pokemon';
+        const URL_POKEMONS = URL_ENDPOINT + "?offset=0&limit=100";
 
-const mostrarPokemon = (pokemon) => {
-    const pokedex = document.getElementById("pokedex")
+        const listaPokemon = (pokemon) => {
+            const pokedex = document.getElementById("pokedex");
 
-    const li = document.createElement('li');
-    li.addEventListener('click', () => {
-        mostrarDetalle(pokemon.id)
-    })
+            const li = document.createElement('li');
+            const link = document.createElement('a');
+            link.href = "detalle.html?id=" + pokemon.id;
+            link.innerText = pokemon.name;
+            li.appendChild(link);
 
-    const titulo = document.createElement('h3');
-    titulo.innerText = pokemon.name;
-    li.appendChild(titulo);
+            pokedex.appendChild(li);
+        }
 
-    const descripcion = document.createElement('p');
-    li.appendChild(descripcion);
+        fetch(URL_POKEMONS)
+        .then(response => response.json())
+        .then(data => {
+            const pokemons = data.results;
+            pokemons.forEach(pokemon => {
+                listaPokemon({
+                    id: getIdFromUrl(pokemon.url),
+                    name: pokemon.name
+                });
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching pokemons:', error);
+        });
 
-    pokedex.appendChild(li);
-    
-}
-
-const mostrarDetalle = (id) => {
-    window.location.href = "http://127.0.0.1:5500/detalle.html?id=" + id
-}
-
-
-fetch(URL_POKEMONES)
-.then(data => data.json())
-.then(result => {
-    const results = result.results; 
-
-    const primerResultado = results [5];
-    mostrarPokemon(primerResultado);
-})
+        function getIdFromUrl(url) {
+            const parts = url.split('/');
+            return parts[parts.length - 2];
+        }
