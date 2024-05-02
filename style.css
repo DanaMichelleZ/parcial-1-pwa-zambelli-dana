@@ -14,8 +14,8 @@ body h1{
 
 .encabezado{
     background-color: black;
+    
 }
-
 #pokedex{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -29,7 +29,6 @@ body h1{
 
     background-color: #e1e0e8;
 }
-
 #pokedex li{
     list-style: none;
     background-color:  #feda00;
@@ -46,4 +45,13 @@ body h1{
 }
 #pokedex li:hover{
     background-color: #ffab00;
+}
+
+
+#detalle-pokemon{
+    margin-left: 150px;
+    margin-right: 150px;
+
+    display: grid;
+    align-items: center;
 }
