@@ -1,0 +1,9 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.pokedex{
+    display: grid;
+    background-color: #FBFBFB;
+    color: #333333;
+}
